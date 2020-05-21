@@ -54,18 +54,18 @@ def sap_connect():
     except:
         print(sys.exc_info()[0])
 
-def read_table(session):
+def read_table(session, tab):
     logging.info('Running read_table(session)')
     try:
         
         wnd = session.findById("wnd[0]")
         tbar = session.findById("wnd[0]/tbar[0]/okcd")
-        sbar = session.FindById("wnd[0]/sbar")
+        sbar = session.findById("wnd[0]/sbar")
 
         wnd.resizeWorkingPane(173, 36, 0)
         tbar.text = "/nse16"
         wnd.sendVKey(0)
-        session.findById("wnd[0]/usr/ctxtDATABROWSE-TABLENAME").text = "ANKA"
+        session.findById("wnd[0]/usr/ctxtDATABROWSE-TABLENAME").text = tab
         wnd.sendVKey(0)
         #session.findById("wnd[0]/tbar[1]/btn[8]").press
         session.findById("wnd[0]/tbar[1]/btn[8]").press()
@@ -83,6 +83,7 @@ def read_table(session):
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
     #logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+    tab = 'ANKA'
     session = sap_connect()
-    read_table(session)
+    read_table(session, tab)
 #-End-------------------------------------------------------------------
