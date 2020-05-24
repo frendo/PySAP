@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": "c:\\Users\\XF34152\\OneDrive - Chemours\\Documents\\Projects\\PySAP\\.venv\\Scripts\\python.exe"
+    "python.pythonPath": "/Users/frendo/Desktop/PySAP/PySAP/.venv/bin/python3",
+    "azureFunctions.deploySubpath": ".",
+    "azureFunctions.scmDoBuildDuringDeployment": true,
+    "azureFunctions.pythonVenv": ".venv",
+    "azureFunctions.projectLanguage": "Python",
+    "azureFunctions.projectRuntime": "~3",
+    "debug.internalConsoleOptions": "neverOpen"
 }

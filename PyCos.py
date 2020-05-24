@@ -9,11 +9,12 @@ def main(data):
     container = db.get_container_client(data['container'])
     query = 'SELECT * FROM c WHERE c.id="1"'
     for item in container.query_items(query=query, enable_cross_partition_query=True):
-        payload = json.dumps(item, indent=True)
-        print(type(payload))
-        print(payload['Customer'])
+        payload = json.loads(json.dumps(item, indent=True))
+        print(payload)
+        print(payload['po'])
+
 if __name__ == "__main__":
-    configFile = '\\config_cosmos.json'
+    configFile = os.path.sep + 'config_cosmos.json'
     __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
     data = {}
 
