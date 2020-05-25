@@ -1,6 +1,6 @@
 #config
 config_cosmos.json
-.sh
+*.sh
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

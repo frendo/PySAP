@@ -16,3 +16,5 @@ PATH="./Archive.zip"
 # Select the Azure subscription that contains the resource group.
 az account set --subscription "$SUB"
 az functionapp deployment source config-zip -g $RG -n $FUNC --src $PATH 
+
+az apim create --name $APIM -g MyResourceGroup -l $LOC --sku-name Consumption --enable-client-certificate --publisher-email $USER --publisher-name Microsoft

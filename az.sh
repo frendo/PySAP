@@ -11,6 +11,7 @@ TAGN="GSW"
 TAGV="STC"
 DB="stcdb"
 USER="graemestewart.watt@chemours.com"
+
 # Select the Azure subscription that contains the resource group.
 
 az account set --subscription "$SUB" 
@@ -27,6 +28,7 @@ echo $RG
 az appservice plan create -g $RG -n $PLAN
 az storage account create -n $STOR -g $RG -l $LOC --sku $STORSKU
 az functionapp create -g $RG  -p $PLAN -n $FUNC -s $STOR --functions-version 2 --runtime dotnet
+az apim create --name $APIM -g $RG -l $LOC --sku-name Consumption --enable-client-certificate --publisher-email $USER --publisher-name Microsoft
 #az cosmosdb create --name $DB --resource-group $RG --subscription $SUB
 # Provide an endpoint for handling the events.
 #myEndpoint="<endpoint URL>"
