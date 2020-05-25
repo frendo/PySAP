@@ -1,5 +1,5 @@
 import logging
-from .PyAzStorage import az_storage
+from PyAzStorage import az_storage
 import azure.functions as func
 
 
