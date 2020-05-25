@@ -12,5 +12,9 @@ az group wait -n AZRGGSW --created
 chmod 700 <filename>
 
 func init LocalFunctionProj --dotnet
+cd
+func new --name HttpExample --template "HTTP trigger"
 
+
+func azure functionapp publish <APP_NAME>
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch ./notes.txt' HEAD
