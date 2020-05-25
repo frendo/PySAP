@@ -1,0 +1,16 @@
+sudo npm install -g azure-functions-core-tools/ --unsafe-perm=true --allow-root
+pip install azure-cosmosdb-table
+pip install --pre azure-cosmos
+curl -X POST -u @.com --data-binary @"./PySAP.zip" https://.scm.azurewebsites.net/api/zipdeploy
+az functionapp deployment source config-zip -g AZRGGSW -n \FuncCosmos --src ./PySAP.zip
+az account set --subscription 'CC_Sandbox_Enterprise Dev/Test'
+az account list-locations
+az configure --defaults location=westeuropez 
+az group exists -n AZRGGSW
+az group wait -n AZRGGSW --created
+
+chmod 700 <filename>
+
+func init LocalFunctionProj --dotnet
+
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch ./notes.txt' HEAD
