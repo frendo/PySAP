@@ -1,0 +1,82 @@
+{
+
+“swagger”: “2.0”,
+
+“info”: {
+
+“version”: “1.0.0”,
+
+“title”: “DiceRollerApp2“
+
+},
+
+“host”: “dicerollerapp.azurewebsites.net”,
+
+“paths”: {
+
+“/api/Roll“: {
+
+“get”: {
+
+“description”: “Calls my azure function over https”,
+
+“operationId”: “RunThis”,
+
+“parameters”: [
+
+{
+
+“name”: “code”,
+
+“in”: “query”,
+
+“description”: “code”,
+
+“default”: “FIPSu1oqs1SJaurLPakKNGQaH9CHCEF7lvetzif7ZsriN1uJ8J88MA==“,
+
+“type”: “string”
+
+},
+
+{
+
+
+“name”: “die”,
+
+“in”: “query”,
+
+“required”: true,
+
+“default”: “D20”,
+
+“type”: “string”
+
+}
+
+],
+
+“responses”: {
+
+“200”: {
+
+“description”: “Successful response”,
+
+“schema”: {
+
+“title”: “The response of the api.”,
+
+“type”: “string”
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
